@@ -1,0 +1,19 @@
+Final answer:
+
+The brute-force string-matching algorithm makes 4980 comparisons for pattern a, 996 comparisons for pattern b, and 1992 comparisons for pattern c when searching in a binary text of 1000 zeros.
+
+Explanation:
+
+The brute-force string-matching algorithm compares each pattern with the text starting at each possible position in the text until a match is found or until there are no more positions to check. In the case of a text consisting of 1000 zeros, we need to consider how the binary patterns align with this text.
+
+Pattern a: 00001
+
+The algorithm will first check the pattern against the text starting at position 1 until position 996. For each position, the algorithm makes 5 comparisons (the length of the pattern), so there are 996 * 5 = 4980 comparisons in total. However, the pattern will never match completely, but the first four zeros will always match, resulting in 4 successful comparisons and 1 unsuccessful comparison at each step.
+
+Pattern b: 10000
+
+For pattern b, the situation is quite different as the pattern starts with a '1,' which is never present in the text of all zeros. Thus, at each position, only one comparison (unsuccessful) is needed before moving to the next position. With 996 possible starting positions, there will be 996 comparisons.
+
+Pattern c: 01010
+
+Finally, the pattern c is checked. At each position, there will be at most two comparisons, since the first comparison will always fail (1 against 0). There are 996 possible positions, leading to a total of 996 * 2 = 1992 comparisons
